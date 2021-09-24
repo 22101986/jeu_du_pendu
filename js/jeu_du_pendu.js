@@ -23,14 +23,14 @@ let startMessage;
 
 
 function start() {
-    startMessage = prompt(`Merci de saisir votre choix`).toLowerCase;
-    if(startMessage === "j") {
+    startMessage = prompt(`Merci de saisir votre choix`);
+    if(startMessage.toLowerCase === "j") {
         startPlay();
     }
-    else if(startMessage === "r") {
+    else if(startMessage.toLowerCase === "r") {
         startRules();
     }
-    else if(startMessage === "q") {
+    else if(startMessage.toLowerCase === "q") {
         goodBye();
     };
 
@@ -54,9 +54,7 @@ function goodBye(){
 // logique de code 
 alert("Bonjour et bienvenue!! Voulez vous jouer au PENDU??");
 
-alert("pour jouer entrez J"+"\\n"
-+"pour quitter entrez Q"+"\\n"
-+"pour les règles du jeux entrez R");
+alert("pour jouer entrez J, pour quitter entrez Q, règles du jeux entrez R.");
 
 start();
 
