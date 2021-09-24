@@ -36,16 +36,25 @@ function start() {
 
 }
 
-function startPlay() {};
-function startRules(){};
+function startPlay() {
+    for(let i = 0; i < cptChoice.length; i++){
+        i = mask.push("_");
+    }
+ return prompt(mask + "\\n"
+                + "vous avez le droit à " + score + "erreurs..."
+                + "\\n" + "Veuillez saisir une lettre:");   
+};
+function startRules(){
+    alert(`T'es sérieux tu connais pas les règles...`);
+};
 function goodBye(){
     alert(`Au revoir et à bientôt!!`);
 };
 
 // logique de code 
+alert("Bonjour et bienvenue!! Voulez vous jouer au PENDU??");
 
-alert("Bonjour et bienvenue"+"\\n"
-+"pour jouer entrez J"+"\\n"
+alert("pour jouer entrez J"+"\\n"
 +"pour quitter entrez Q"+"\\n"
 +"pour les règles du jeux entrez R");
 
