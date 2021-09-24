@@ -23,7 +23,7 @@ let startMessage;
 
 
 function start() {
-    startMessage = prompt(`Merci de saisir votre choix`).toLocaleLowerCase;
+    startMessage = prompt(`Merci de saisir votre choix`).toLowerCase;
     if(startMessage === "j") {
         startPlay();
     }
