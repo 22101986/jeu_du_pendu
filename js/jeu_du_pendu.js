@@ -23,12 +23,22 @@ let startMessage;
 
 
 function start() {
-    startMessage = prompt(`Merci de saisir votre choix`)
-
-
+    startMessage = prompt(`Merci de saisir votre choix`).toLocaleLowerCase;
+    if(startMessage === j) {
+        startPlay();
+    }
+    else if(startMessage === r){
+        startRules();
+    }
+    else {};
 
 }
 
+function startPlay() {};
+function startRules(){};
+function goodBye(){
+    alert(`Au revoir et à bientôt!!`);
+};
 
 // logique de code 
 
