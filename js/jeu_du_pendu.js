@@ -1,6 +1,6 @@
 // variables
 
-var list = [
+let list = [
     ["gorille"],
     ["crapaud"],
     ["baleine"],
@@ -10,13 +10,14 @@ var list = [
     ["manchot"]
 ];
 
-var score = 7;
+let score = 7;
 
-var cptChoice = list[Math.floor(Math.random() * list.length)];
+let cptChoice = list[Math.floor(Math.random() * list.length)];
 
-var mask = [""]
+let mask = [];
+let masked = [];
 
-var startMessage;
+let startMessage;
 
 
 
@@ -41,10 +42,9 @@ function start() {
 }
 
 function startPlay() {
-    for(let i = 0; i < cptChoice.length; i++){
-        i = mask.push("_");
+    for(let value of cptChoice){
+        alert(value);
     }
- return prompt(mask + "vous avez le droit à " + score + " erreurs... Veuillez saisir une lettre:");   
 };
 
 
