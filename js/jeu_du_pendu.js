@@ -16,41 +16,59 @@ let cptChoice = list[Math.floor(Math.random() * list.length)];
 
 let mask = ["_", "_", "_", "_", "_", "_", "_"];
 
+let letter;
 
 let startMessage;
 
 
 
+
+
 // fonctions
-
-
-function start() {
-    startMessage = prompt(`Merci de saisir votre choix`);
-    if(startMessage === "j") {
-       return prompt(mask.join(" ") + " Vous avez " + score + " essais, saisir une lettre:");
-    }
-    else if(startMessage === "r") {
-       return alert(`T'es sérieux tu connais pas les règles...`);
-    }
-    else if(startMessage === "q") {
-       return alert(`Au revoir et à bientôt!!`);
-    }
-    else {
-        start();
-    };
-
+function  hello() {
+    alert("Bonjour et bienvenue!! Voulez vous jouer au PENDU??");
 }
 
+function start() {
+    startMessage = prompt(`Saisir: \n j pour jouer \n r pour les règles du jeu \n q pour quitter`);
+    if(startMessage === "j") {
+       return letter = prompt(mask.join(" ") + " Vous avez " + score + " essais, saisir une lettre:");
+    }
+    else if(startMessage === "r") {
+        alert(`T'es sérieux!!! tu connais pas les règles...`);
+       return start();
+    }
+    else if(startMessage === "q") {
+       alert(`Au revoir et à bientôt!!`);
+       return hello();
+       
+    }
+    else {
+        return start();
+    };
+}
+function game(i) {
+   if(letter !== cptChoice[i] ) {
+        score -= 1; 
+        letter = prompt(mask.join(" ") + " Vous avez " + score + " essais, saisir une lettre:");
+        return game(i);
+}
+    if(letter === cptChoice[i]) {
+        mask[i] === cptChoice[i];
+        letter = prompt(mask.join(" ") + " Vous avez " + score + " essais, saisir une lettre:");
+        return game(i);
 
-
+    }
+ };
 
 
 // logique de code 
-alert("Bonjour et bienvenue!! Voulez vous jouer au PENDU??");
-
-alert("pour jouer entrez J, pour quitter entrez Q, règles du jeux entrez R.");
+hello();
 
 start();
+
+game();
+console.log(cptChoice);
 
 
 
