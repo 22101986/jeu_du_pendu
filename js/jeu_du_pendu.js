@@ -1,21 +1,21 @@
 // variables
 
 let list = [
-    ["gorille"],
-    ["crapaud"],
-    ["baleine"],
-    ["belette"],
-    ["caracal"],
-    ["gazelle"],
-    ["manchot"]
+    ["g", "o", "r", "i", "l", "l", "e"],
+    ["c", "r", "a", "p", "a", "u", "d"],
+    ["b", "a", "l", "e", "i", "n", "e"],
+    ["b", "e", "l", "e", "t", "t", "e"],
+    ["c", "a", "r", "a", "c", "a", "l"],
+    ["g", "a", "z", "e", "l", "l", "e"],
+    ["m", "a", "n", "c", "h", "o", "t"]
 ];
 
 let score = 7;
 
 let cptChoice = list[Math.floor(Math.random() * list.length)];
 
-let mask = [];
-let masked = [];
+let mask = ["_", "_", "_", "_", "_", "_", "_"];
+
 
 let startMessage;
 
@@ -27,7 +27,7 @@ let startMessage;
 function start() {
     startMessage = prompt(`Merci de saisir votre choix`);
     if(startMessage === "j") {
-       return startPlay();
+       return prompt(mask.join(" ") + " Vous avez " + score + " essais, saisir une lettre:");
     }
     else if(startMessage === "r") {
        return alert(`T'es sérieux tu connais pas les règles...`);
@@ -41,11 +41,8 @@ function start() {
 
 }
 
-function startPlay() {
-    for(let value of cptChoice){
-        alert(value);
-    }
-};
+
+
 
 
 // logique de code 
