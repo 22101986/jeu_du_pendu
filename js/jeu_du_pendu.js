@@ -48,7 +48,7 @@ function start() {
     };
 }
 function game(i) {
-   if(letter !== cptChoice[i] ) {
+   if(letter !== cptChoice[i] && score > 0 ) {
         score -= 1; 
         letter = prompt(mask.join(" ") + " Vous avez " + score + " essais, saisir une lettre:");
         return game(i);
@@ -59,6 +59,8 @@ function game(i) {
         return game(i);
 
     }
+    
+    
  };
 
 
