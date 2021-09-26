@@ -1,6 +1,6 @@
 // variables
 
-let list = [
+var list = [
     ["gorille"],
     ["crapaud"],
     ["baleine"],
@@ -10,13 +10,14 @@ let list = [
     ["manchot"]
 ];
 
-let score = 7;
+var score = 7;
 
-let cptChoice = list[Math.floor(Math.random() * list.length)];
+var cptChoice = list[Math.floor(Math.random() * list.length)];
 
-let mask = [""]
+var mask = [""]
 
-let startMessage;
+var startMessage;
+
 
 
 // fonctions
@@ -24,14 +25,17 @@ let startMessage;
 
 function start() {
     startMessage = prompt(`Merci de saisir votre choix`);
-    if(startMessage.toLowerCase === "j") {
-        startPlay();
+    if(startMessage === "j") {
+       return startPlay();
     }
-    else if(startMessage.toLowerCase === "r") {
-        startRules();
+    else if(startMessage === "r") {
+       return alert(`T'es sérieux tu connais pas les règles...`);
     }
-    else if(startMessage.toLowerCase === "q") {
-        goodBye();
+    else if(startMessage === "q") {
+       return alert(`Au revoir et à bientôt!!`);
+    }
+    else {
+        start();
     };
 
 }
@@ -40,16 +44,9 @@ function startPlay() {
     for(let i = 0; i < cptChoice.length; i++){
         i = mask.push("_");
     }
- return prompt(mask + "\\n"
-                + "vous avez le droit à " + score + "erreurs..."
-                + "\\n" + "Veuillez saisir une lettre:");   
+ return prompt(mask + "vous avez le droit à " + score + " erreurs... Veuillez saisir une lettre:");   
 };
-function startRules(){
-    alert(`T'es sérieux tu connais pas les règles...`);
-};
-function goodBye(){
-    alert(`Au revoir et à bientôt!!`);
-};
+
 
 // logique de code 
 alert("Bonjour et bienvenue!! Voulez vous jouer au PENDU??");
