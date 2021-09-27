@@ -65,6 +65,9 @@ function game(i) {
     if(score === 1) {
         alert(`Dommage vous avez perdu...\n Le mot était ${cptChoice.join("")}.`);
     }
+    if(mask === cptChoice) {
+        alert(`Bravo vous avez trouvé le mot: "${cptChoice.join}". \nToutes mes felicitations`);
+    }
     
     
     
@@ -78,6 +81,8 @@ start();
 
 game();
 console.log(cptChoice);
+
+
 
 
 
