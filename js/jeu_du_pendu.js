@@ -51,13 +51,13 @@ function start() {
     
 }
 function game(i) {
-   if(letter !== cptChoice[i] && score  > 1 ) {
+   if(!cptChoice.includes(letter) && score  > 1 ) {
         score -= 1; 
         letter = prompt(`${mask.join(" ")} \nVous avez  ${score} essais, saisir une lettre:`);
         return game(i);
 }
-    if(letter === cptChoice[i] && score > 1) {
-        mask[i] = cptChoice[i];
+    if(cptChoice.includes(letter) && score > 1) {
+        mask[i] = letter;
         letter = prompt(`${mask.join(" ")} \nVous avez  ${score} essais, saisir une lettre:`);
         return game(i);
 
@@ -80,9 +80,4 @@ hello();
 start();
 
 game();
-console.log(cptChoice);
-
-
-
-
 
