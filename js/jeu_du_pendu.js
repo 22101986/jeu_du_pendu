@@ -18,7 +18,7 @@ let mask = ["_", "_", "_", "_", "_", "_", "_"];
 
 let letter;
 
-let startMessage;
+
 
 
 
@@ -30,10 +30,9 @@ function  hello() {
 }
 
 function start() {
-    startMessage = prompt(`Saisir: \n j pour jouer \n r pour les règles du jeu \n q pour quitter`);
+   let startMessage = prompt(`Saisir: \n j pour jouer \n r pour les règles du jeu \n q pour quitter`);
     if(startMessage === "j") {
-        console.log(cptChoice);
-       return letter = prompt(`${mask.join(" ")} \nVous avez  ${score} essais, saisir une lettre:`);
+       game();
     }
     else if(startMessage === "r") {
         alert(`T'es sérieux!!! tu connais pas les règles...`);
@@ -50,23 +49,33 @@ function start() {
     };
     
 }
-function game(i) {
-   if(!cptChoice.includes(letter) && score  > 1 ) {
+function game() {
+    letter = prompt(`${mask.join(" ")} \nVous avez  ${score} essais, saisir une lettre:`);
+
+    if(!cptChoice.includes(letter) && score  > 1 ) {
         score -= 1; 
-        letter = prompt(`${mask.join(" ")} \nVous avez  ${score} essais, saisir une lettre:`);
-        return game(i);
+         
 }
     if(cptChoice.includes(letter) && score > 1) {
-        mask[i] = letter;
-        letter = prompt(`${mask.join(" ")} \nVous avez  ${score} essais, saisir une lettre:`);
-        return game(i);
+        for(let i= 0; i < cptChoice.length; i++) {
+            if(cptChoice[i] === letter) {
+                mask[i] = letter;
+            }
+        }
+        
+         
 
     }
     if(score === 1) {
         alert(`Dommage vous avez perdu...\n Le mot était ${cptChoice.join("")}.`);
+        start();
     }
-    if(mask === cptChoice) {
-        alert(`Bravo vous avez trouvé le mot: "${cptChoice.join}". \nToutes mes felicitations`);
+    else if(mask.join("") === cptChoice.join("")) {
+        alert(`Bravo vous avez trouvé le mot: "${cptChoice.join("")}". \nToutes mes felicitations`);
+        start()
+    }
+    else {
+        game();
     }
     
     
@@ -79,5 +88,5 @@ hello();
 
 start();
 
-game();
+
 
