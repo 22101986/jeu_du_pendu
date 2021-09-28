@@ -18,12 +18,6 @@ let mask = ["_", "_", "_", "_", "_", "_", "_"];
 
 let letter;
 
-
-
-
-
-
-
 // fonctions
 function  hello() {
     alert("Bonjour et bienvenue!! Voulez vous jouer au PENDU??");
@@ -41,31 +35,23 @@ function start() {
     else if(startMessage === "q") {
        alert(`Au revoir et à bientôt!!`);
        return hello();
-       
-    }
+        }
     else {
         return start();
-        
-    };
-    
-}
+        };
+    }
 function game() {
     letter = prompt(`${mask.join(" ")} \nVous avez  ${score} essais, saisir une lettre:`);
-
-    if(!cptChoice.includes(letter) && score  > 1 ) {
-        score -= 1; 
-         
+        if(!cptChoice.includes(letter) && score  > 1 ) {
+        score -= 1;          
 }
-    if(cptChoice.includes(letter) && score > 1) {
-        for(let i= 0; i < cptChoice.length; i++) {
-            if(cptChoice[i] === letter) {
+        if(cptChoice.includes(letter) && score > 1) {
+            for(let i= 0; i < cptChoice.length; i++) {
+                if(cptChoice[i] === letter) {
                 mask[i] = letter;
-            }
         }
-        
-         
-
-    }
+        }
+       }
     if(score === 1) {
         alert(`Dommage vous avez perdu...\n Le mot était ${cptChoice.join("")}.`);
         start();
@@ -76,10 +62,7 @@ function game() {
     }
     else {
         game();
-    }
-    
-    
-    
+    } 
  };
 
 
