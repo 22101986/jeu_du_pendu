@@ -34,7 +34,6 @@ function start() {
     }
     else if(startMessage === "q") {
        alert(`Au revoir et à bientôt!!`);
-       return hello();
         }
     else {
         return start();
@@ -54,18 +53,16 @@ function game() {
        }
     if(score === 1) {
         alert(`Dommage vous avez perdu...\n Le mot était ${cptChoice.join("")}.`);
-        start();
+        alert("Merci à bientôt");
     }
     else if(mask.join("") === cptChoice.join("")) {
         alert(`Bravo vous avez trouvé le mot: "${cptChoice.join("")}". \nToutes mes felicitations`);
-        start()
+        alert("Merci à bientôt!!");
     }
     else {
         game();
     } 
  };
-
-
 // logique de code 
 hello();
 
